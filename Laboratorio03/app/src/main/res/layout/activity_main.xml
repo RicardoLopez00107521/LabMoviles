@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tittle_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+
+        android:text="@string/tittle_textview"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/counter_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="100dp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tittle_text_view"
+        app:layout_constraintStart_toStartOf="@+id/tittle_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/tittle_text_view" />
+
+    <ImageView
+        android:id="@+id/five_cents_image_view"
+        android:layout_width="@dimen/width_image"
+        android:layout_height="@dimen/height_image"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/ten_cents_image_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter_text_view"
+        app:srcCompat="@drawable/five_cents" />
+
+    <TextView
+        android:id="@+id/five_cent_text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_imageview_textview"
+
+        android:text="@string/five_cents"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/five_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/five_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/five_cents_image_view" />
+
+    <ImageView
+        android:id="@+id/ten_cents_image_view"
+        android:layout_width="@dimen/width_image"
+        android:layout_height="@dimen/height_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/five_cents_image_view"
+        app:layout_constraintTop_toTopOf="@+id/five_cents_image_view"
+        app:srcCompat="@drawable/ten_cents" />
+
+    <TextView
+        android:id="@+id/five_cent_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/margin_imageview_textview"
+        android:text="@string/ten_cents"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/ten_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/ten_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/ten_cents_image_view" />
+
+    <ImageView
+        android:id="@+id/twenty_five_cents_image_view"
+        android:layout_width="@dimen/width_image"
+        android:layout_height="@dimen/height_image"
+        android:layout_margin="@dimen/margin_imageview_imageview"
+        app:layout_constraintEnd_toEndOf="@+id/five_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/five_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/five_cent_text_view2"
+        app:srcCompat="@drawable/quarter" />
+
+    <TextView
+        android:id="@+id/twenty_five_cent_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_imageview_textview"
+
+        android:text="@string/twenty_five_cents"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/twenty_five_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/twenty_five_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/twenty_five_cents_image_view" />
+
+    <ImageView
+        android:id="@+id/one_dollar_image_view"
+        android:layout_width="@dimen/width_image"
+        android:layout_height="@dimen/height_image"
+        android:layout_margin="@dimen/margin_imageview_imageview"
+        app:layout_constraintEnd_toEndOf="@+id/ten_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/ten_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/five_cent_text_view"
+        app:srcCompat="@drawable/one_dollar" />
+
+    <TextView
+        android:id="@+id/one_dollar_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_imageview_textview"
+
+        android:text="@string/one_dollar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/one_dollar_image_view"
+        app:layout_constraintStart_toStartOf="@+id/one_dollar_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/one_dollar_image_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
