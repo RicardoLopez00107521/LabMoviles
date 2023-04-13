@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Laboratorio04PDM</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_phone_number">Teléfono</string>
+    <string name="button_text_guardar">Guardar</string>
+    <string name="tittle_TextView">Rellena la siguiente información</string>
+    <string name="email_TextView2">Correo electrónico</string>
+    <string name="name_TextView2">Nombre</string>
+    <string name="telefono_TextView">Teléfono</string>
+    <string name="button_share_text">Compartir</string>
+    <string name="second_tittle_text">Confirma tu informacion</string>
+</resources>
