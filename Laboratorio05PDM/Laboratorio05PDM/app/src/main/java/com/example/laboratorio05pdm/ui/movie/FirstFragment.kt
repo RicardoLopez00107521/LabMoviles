@@ -1,4 +1,4 @@
-package com.example.laboratorio05pdm
+package com.example.laboratorio05pdm.ui.movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.laboratorio05pdm.R
 
 class firstFragment : Fragment() {
 

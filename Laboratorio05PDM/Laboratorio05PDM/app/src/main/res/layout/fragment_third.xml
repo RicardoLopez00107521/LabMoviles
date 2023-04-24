@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@color/backgroundLayout"
-    tools:context=".thirdFragment">
+    tools:context=".ui.movie.thirdFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
