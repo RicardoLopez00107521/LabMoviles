@@ -10,60 +10,60 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.laboratorio05pdm.R
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.laboratorio05pdm.data.category2
 import com.example.laboratorio05pdm.data.description2
 import com.example.laboratorio05pdm.data.model.MovieModel
 import com.example.laboratorio05pdm.data.name2
 import com.example.laboratorio05pdm.data.qualification2
+import com.example.laboratorio05pdm.databinding.FragmentThirdBinding
 
 class thirdFragment : Fragment() {
-
-    private lateinit var add_button: Button
-    private lateinit var name: EditText
-    private lateinit var categorie: EditText
-    private lateinit var description: EditText
-    private lateinit var rate: EditText
 
     private val ViewModel: MovieViewModel by activityViewModels{
         MovieViewModel.Factory
     }
 
+    private lateinit var binding: FragmentThirdBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false)
+        binding = FragmentThirdBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bind()
-        ClickListener()
+        setViewModel()
+        observeStatus()
     }
 
-    private fun ClickListener(){
-        add_button.setOnClickListener{
-            val name = name.text.toString()
-            val categorie = categorie.text.toString()
-            val description = description.text.toString()
-            val rate = rate.text.toString()
+    private fun setViewModel() {
+        binding.viewmodel = ViewModel
+    }
 
-            val new_movie = MovieModel (name, categorie, description, rate)
+    private fun observeStatus() {
+        ViewModel.status.observe(viewLifecycleOwner) { status ->
+            when {
+                status.equals(MovieViewModel.WRONG_INFORMATION) -> {
+                    Log.d(APP_TAG, status)
+                    ViewModel.clearStatus()
+                }
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+                    Log.d(APP_TAG, status)
+                    Log.d(APP_TAG, ViewModel.getMovies().toString())
 
-            ViewModel.addMovies(new_movie)
-
-            Log.d("Mostrando lista",ViewModel.getMovies().toString())
+                    ViewModel.clearStatus()
+                    findNavController().popBackStack()
+                }
+            }
         }
     }
 
-    private fun bind(){
-        add_button = view?.findViewById(R.id.button)!!
-        name = view?.findViewById(R.id.name_editText)!!
-        categorie = view?.findViewById(R.id.categorie_editText)!!
-        description = view?.findViewById(R.id.description_editText)!!
-        rate = view?.findViewById(R.id.rate_editText)!!
+    companion object {
+        const val APP_TAG = "APP_TAG"
     }
 }

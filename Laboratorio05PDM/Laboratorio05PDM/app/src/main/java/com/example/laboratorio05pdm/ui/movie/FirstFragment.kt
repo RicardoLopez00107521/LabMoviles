@@ -9,15 +9,18 @@ import android.widget.Button
 import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
 import com.example.laboratorio05pdm.R
+import com.example.laboratorio05pdm.databinding.FragmentFirstBinding
 
 class firstFragment : Fragment() {
+
+    private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        binding = FragmentFirstBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
