@@ -1,22 +1,15 @@
-package com.example.laboratorio05pdm.ui.movie
+package com.example.laboratorio05pdm.ui.movie.newmovie
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.fragment.app.Fragment
-import com.example.laboratorio05pdm.R
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.laboratorio05pdm.data.category2
-import com.example.laboratorio05pdm.data.description2
-import com.example.laboratorio05pdm.data.model.MovieModel
-import com.example.laboratorio05pdm.data.name2
-import com.example.laboratorio05pdm.data.qualification2
 import com.example.laboratorio05pdm.databinding.FragmentThirdBinding
+import com.example.laboratorio05pdm.ui.movie.viewmodel.MovieViewModel
 
 class thirdFragment : Fragment() {
 

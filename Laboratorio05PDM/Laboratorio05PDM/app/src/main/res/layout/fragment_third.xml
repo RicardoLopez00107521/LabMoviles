@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.laboratorio05pdm.ui.movie.MovieViewModel"/>
+            type="com.example.laboratorio05pdm.ui.movie.viewmodel.MovieViewModel"/>
     </data>
 
     <FrameLayout

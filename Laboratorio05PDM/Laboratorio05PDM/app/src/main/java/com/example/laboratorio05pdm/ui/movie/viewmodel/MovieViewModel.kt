@@ -1,4 +1,4 @@
-package com.example.laboratorio05pdm.ui.movie
+package com.example.laboratorio05pdm.ui.movie.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.laboratorio05pdm.MovieReviewerApplication
+import com.example.laboratorio05pdm.data.description
 import com.example.laboratorio05pdm.data.model.MovieModel
 import com.example.laboratorio05pdm.repositories.MovieRepository
 
@@ -49,7 +50,7 @@ class MovieViewModel(private val repository: MovieRepository):ViewModel() {
         return true
     }
 
-    private fun clearData() {
+     fun clearData() {
         name.value = ""
         category.value = ""
         descrption.value = ""
@@ -58,6 +59,13 @@ class MovieViewModel(private val repository: MovieRepository):ViewModel() {
 
     fun clearStatus() {
         status.value = INACTIVE
+    }
+
+    fun setSelectedMovie(movie: MovieModel) {
+        name.value = movie.name
+        category.value = movie.category
+        descrption.value = movie.description
+        qualification.value = movie.qualification
     }
 
     companion object {
