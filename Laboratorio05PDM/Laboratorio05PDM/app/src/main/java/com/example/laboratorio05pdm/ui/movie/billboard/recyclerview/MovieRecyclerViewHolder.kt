@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.laboratorio05pdm.data.model.MovieModel
 import com.example.laboratorio05pdm.databinding.MovieItemBinding
 
-
 class MovieRecyclerViewHolder (private val binding: MovieItemBinding):RecyclerView.ViewHolder(binding.root) {
 
     fun bind(movie: MovieModel, clickListener: (MovieModel) -> Unit) {
